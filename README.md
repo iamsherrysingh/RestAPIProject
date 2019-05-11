@@ -4,5 +4,5 @@ DB server is MySql.
 Planned:
 
 1. Complete the project
-2. Incorporate Angular
-3. Replace JDBC with Hibernate
+2. Replace JDBC with Hibernate
+3. Incorporate Angular
