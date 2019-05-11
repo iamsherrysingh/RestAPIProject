@@ -3,6 +3,7 @@ DB server is MySql.
 
 Planned:
 
-1. Complete the project
-2. Replace JDBC with Hibernate
-3. Incorporate Angular
+. Complete the project
+. Replace JDBC with Hibernate
+. Replace Jersey with Spring REST
+. Incorporate Angular
