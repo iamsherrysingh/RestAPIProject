@@ -51,7 +51,15 @@ public class AlienResource {
 	public Alien updateAlien(Alien a1)
 	{
 		System.out.println(a1);
-		repo.update(a1);
+		if(repo.getAlien(a1.getId()).getId()==0)  //Entry not existent. Will add new entry.
+		{
+			System.out.println("[PUT request] Entry not existent. Adding new entry.");
+			repo.create(a1);
+		}
+		else  //Entry exists
+		{
+			repo.update(a1);
+		}
 		return a1;
 	}
 }
