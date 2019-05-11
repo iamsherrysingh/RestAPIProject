@@ -90,7 +90,6 @@ public class AlienRepository {
 	
 	public void update(Alien a1) {
 		String sql= "update alien set name=?, points=? where id=?";
-		List<Alien> aliens= new ArrayList<Alien>();
 		try 
 		{
 			PreparedStatement st= con.prepareStatement(sql);
@@ -106,4 +105,21 @@ public class AlienRepository {
 		}
 		System.out.println(a1.getName()+ " updated" );
 	}
+	
+	public void delete(Alien a1) {
+		String sql= "delete from alien where id=?";
+		try 
+		{
+			PreparedStatement st= con.prepareStatement(sql);
+			st.setInt(1, a1.getId());
+			
+			st.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		System.out.println(a1.getName()+ " deleted" );
+	}
+	
 }

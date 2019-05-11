@@ -3,6 +3,7 @@ package com.sherry.demorest;
 import java.util.*;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -59,6 +60,24 @@ public class AlienResource {
 		else  //Entry exists
 		{
 			repo.update(a1);
+		}
+		return a1;
+	}
+	
+	@DELETE
+	@Path("alien")
+	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public Alien deleteAlien(Alien a1)
+	{
+		System.out.println(a1);
+		if(repo.getAlien(a1.getId()).getId()==0)  //Entry not existent.
+		{
+			System.out.println("[DELETE request] Entry not existent.");
+		}
+		else  //Entry exists
+		{
+			repo.delete(a1);
+			System.out.println(a1.getName()+ " deleted.");
 		}
 		return a1;
 	}
