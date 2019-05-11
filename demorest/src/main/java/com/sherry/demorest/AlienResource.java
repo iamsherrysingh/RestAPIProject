@@ -66,8 +66,9 @@ public class AlienResource {
 	
 	@DELETE
 	@Path("alien/{id}")
-	public void deleteAlien(@PathParam("id") int id)
+	public Alien deleteAlien(@PathParam("id") int id)
 	{
+		Alien a= repo.getAlien(id);
 		if(repo.getAlien(id).getId()==0)  //Entry not existent.
 		{
 			System.out.println("[DELETE request] Entry not existent.");
@@ -77,5 +78,6 @@ public class AlienResource {
 			repo.delete(id);
 			System.out.println("Alien with id "+id+" deleted. ");
 		}
+		return a;
 	}
 }
