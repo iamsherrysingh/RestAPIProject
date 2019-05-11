@@ -104,6 +104,6 @@ public class AlienRepository {
 		{
 			System.out.println(e);
 		}
-		System.out.println(a1.getName()+ " updated" );
+		System.out.println(a1.getName()+ "  updated" );
 	}
 }
