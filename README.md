@@ -1,4 +1,5 @@
 This is a RestAPI project with Java and JDBC.
+DB server is MySql.
 
 Planned:
 
