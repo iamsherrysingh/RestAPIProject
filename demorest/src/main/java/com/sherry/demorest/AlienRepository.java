@@ -86,6 +86,24 @@ public class AlienRepository {
 			System.out.println(e);
 		}
 		System.out.println(a1.getName()+ " added" );
-		
+	}
+	
+	public void update(Alien a1) {
+		String sql= "update alien set name=?, points=? where id=?";
+		List<Alien> aliens= new ArrayList<Alien>();
+		try 
+		{
+			PreparedStatement st= con.prepareStatement(sql);
+			st.setString(1, a1.getName());
+			st.setInt(2,a1.getPoints());
+			st.setInt(3, a1.getId());
+			
+			st.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		System.out.println(a1.getName()+ " updated" );
 	}
 }
