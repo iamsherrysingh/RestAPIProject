@@ -65,20 +65,17 @@ public class AlienResource {
 	}
 	
 	@DELETE
-	@Path("alien")
-	@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public Alien deleteAlien(Alien a1)
+	@Path("alien/{id}")
+	public void deleteAlien(@PathParam("id") int id)
 	{
-		System.out.println(a1);
-		if(repo.getAlien(a1.getId()).getId()==0)  //Entry not existent.
+		if(repo.getAlien(id).getId()==0)  //Entry not existent.
 		{
 			System.out.println("[DELETE request] Entry not existent.");
 		}
 		else  //Entry exists
 		{
-			repo.delete(a1);
-			System.out.println(a1.getName()+ " deleted.");
+			repo.delete(id);
+			System.out.println("Alien with id "+id+" deleted.");
 		}
-		return a1;
 	}
 }

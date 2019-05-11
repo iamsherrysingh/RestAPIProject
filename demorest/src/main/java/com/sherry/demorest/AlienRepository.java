@@ -106,12 +106,12 @@ public class AlienRepository {
 		System.out.println(a1.getName()+ " updated" );
 	}
 	
-	public void delete(Alien a1) {
+	public void delete(int id) {
 		String sql= "delete from alien where id=?";
 		try 
 		{
 			PreparedStatement st= con.prepareStatement(sql);
-			st.setInt(1, a1.getId());
+			st.setInt(1, id);
 			
 			st.executeUpdate();
 		}
@@ -119,7 +119,6 @@ public class AlienRepository {
 		{
 			System.out.println(e);
 		}
-		System.out.println(a1.getName()+ " deleted" );
 	}
 	
 }
