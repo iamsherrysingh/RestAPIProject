@@ -75,7 +75,7 @@ public class AlienResource {
 		else  //Entry exists
 		{
 			repo.delete(id);
-			System.out.println("Alien with id "+id+" deleted.");
+			System.out.println("Alien with id "+id+" deleted. ");
 		}
 	}
 }
