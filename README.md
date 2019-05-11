@@ -3,6 +3,7 @@ DB server is MySql.
 
 To learn:
 . Spring Core
+. Hibernate
 
 Planned:
 . Complete the project
