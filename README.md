@@ -11,4 +11,4 @@ Planned:
 . Complete the project
 . Replace JDBC with Hibernate
 . Replace Jersey with Spring REST
-. Incorporate Angular
+. Incorporate ReactJS
